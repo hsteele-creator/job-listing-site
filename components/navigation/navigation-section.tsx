@@ -20,9 +20,11 @@ const NavigationSection = ({
     <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className={`${!openMobileNav && "hidden"} lg:block lg:mt-4`}
+      className={`${
+        !openMobileNav && "hidden"
+      } lg:block`}
     >
-      <div className="flex items-center gap-[2px] w-[155px]">
+      <div className="flex items-center gap-[2px] w-[155px] lg:w-auto">
         <h2 className="hover:text-blue-700 cursor-pointer">{title}</h2>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +42,7 @@ const NavigationSection = ({
         </svg>
       </div>
       {open && (
-        <div className="w-[155px] flex-wrap p-2 box-border shadow-sm bg-[#333333] text-gray-100 text-sm rounded-md z-10">
+        <div className="w-[155px] flex-wrap p-2 box-border shadow-sm bg-[#333333] text-gray-100 text-sm rounded-md z-10 lg:absolute ">
           {links.map((link) => {
             return (
               <Link href={link.link} className="block leading-6">
